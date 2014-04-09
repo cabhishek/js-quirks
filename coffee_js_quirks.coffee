@@ -14,16 +14,16 @@
 # class Human
 #   constructor: (@name) ->
 
-#   talk: (words) ->
-#     console.log @name + " talks at speed of #{words} words per min."
+#   sing: (words) ->
+#     console.log @name + " sings at speed of #{words} words per min."
 
-# class Man extends Human
-#   talk: ->
-#     console.log "Man talking..."
+# class Musician extends Human
+#   sing: ->
+#     console.log "Musician singing..."
 #     super 10
 
-# man = new Man "Slim Shady"
-# man.talk()
+# man = new Musician "Bob Dylan"
+# man.sing()
 
 # 4) Bound methods
 # class MyKlass
