@@ -115,20 +115,20 @@ var print = require('./print')
 //JavaScript has no built-in hash-table/dict support
 
 //3) Prototypes
-// function Person(name){
-//     this.name = name
-// }
+function Person(name){
+    this.name = name
+}
 
-// print(Person.prototype)
+print(Person.prototype)
 
-// var person = new Person("Slim Shady")
+var person = new Person("Slim Shady")
 
 
-// Person.prototype.printName = function(){
-//     print("My name is real =>" + this.name)
-// }
+Person.prototype.printName = function(){
+    print("My name is real =>" + this.name)
+}
 
-// person.printName()
+person.printName()
 
 // print(Object.getPrototypeOf(person) === Person.prototype)
 
@@ -151,6 +151,17 @@ var print = require('./print')
 // person.printName()
 
 // print(Object.getPrototypeOf(person) === Person.prototype)
+
+//Inhertiance
+// function Man(name){
+//     this.name = name
+// }
+
+// Man.prototype = Object.create(Person.prototype)
+
+// var man = new Man("Jay Z")
+
+// man.printName()
 
 // ===================================================
 //4) Bound methods

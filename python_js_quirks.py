@@ -41,6 +41,16 @@
 
 # person.print_name()
 
+
+# class Man(Person):
+
+#     def __init__(self, name):
+#         self.name = name
+
+# man = Man("Jay Z")
+
+# man.print_name()
+
 # 4) Bound methods
 # class MyKlass:
 #     def __init__(self):
