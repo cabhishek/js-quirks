@@ -1,14 +1,40 @@
+# 3) Prototypes
 
-# 2) Bound methods
-class MyKlass
-    constructor: () ->
-        @name = "Slim Shady"
+# class Person
+#     constructor: (name) ->
+#         @name = name
 
-        foo = @printMe
+#     printMe: ->
+#         console.log "I am real #{@name}"
 
-        foo()
+# person = new Person "Slim Shady"
 
-    printMe: () =>
-        console.log "I am real #{@name}"
+# person.printMe()
 
-new MyKlass
+# class Human
+#   constructor: (@name) ->
+
+#   talk: (words) ->
+#     console.log @name + " talks at speed of #{words} words per min."
+
+# class Man extends Human
+#   talk: ->
+#     console.log "Man talking..."
+#     super 10
+
+# man = new Man "Slim Shady"
+# man.talk()
+
+# 4) Bound methods
+# class MyKlass
+#     constructor: () ->
+#         @name = "Slim Shady"
+
+#         foo = @printMe
+
+#         foo()
+
+#     printMe: () =>
+#         console.log "I am real #{@name}"
+
+# new MyKlass
