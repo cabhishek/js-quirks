@@ -115,20 +115,21 @@ var print = require('./print')
 //JavaScript has no built-in hash-table/dict support
 
 //3) Prototypes
-function Person(name){
-    this.name = name
-}
+// function Person(name){
+//     this.name = name
+// }
 
-print(Person.prototype)
+// print(Person.prototype)
 
-var person = new Person("Slim Shady")
+// var person = new Person("Slim Shady")
 
+// // print(person instanceof Person)
 
-Person.prototype.printName = function(){
-    print("My name is real =>" + this.name)
-}
+// Person.prototype.printName = function(){
+//     print("My name is real =>" + this.name)
+// }
 
-person.printName()
+// person.printName()
 
 // print(Object.getPrototypeOf(person) === Person.prototype)
 
@@ -153,15 +154,25 @@ person.printName()
 // print(Object.getPrototypeOf(person) === Person.prototype)
 
 //Inhertiance
-// function Man(name){
+// function Musician(name){
 //     this.name = name
 // }
 
-// Man.prototype = Object.create(Person.prototype)
+// Musician.prototype = Object.create(Person.prototype)
 
-// var man = new Man("Jay Z")
+// var musician = new Musician("Bob Dylan")
 
-// man.printName()
+// musician.printName()
+
+// Musician.prototype.Childern = function(){
+//     print("Yes man has childern")
+// }
+
+// print(Musician.prototype)
+
+// print(musician instanceof Person)
+// print(musician instanceof Musician)
+
 
 // ===================================================
 //4) Bound methods
@@ -210,3 +221,6 @@ person.printName()
 // print(foo = (bar = baz) * 2)
 
 // print(bar)
+
+//functions vs methods
+//“functions that belong to an object” to “methods.”
