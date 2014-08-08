@@ -5,47 +5,53 @@ var print = require('./print')
 // 1)Variable hoisting
 
 // function foo() {
-//     print(name);
+//     var name
 
-//     var name = "Slim Shady";
+//     print(name)
 
-//     print(name);
+//     name = "Slim Shady"
+
+//     print(name)
 // }
 
 // foo()
 
 //1.a) Block scope like Java and C# ?
 // function foo(bar) {
-//     var baz = bar * 2;
+//     var blitz
+//     var baz
+
+//     baz  = bar * 2
 
 //     //if (bar > 1000)
 //     if (bar > 1) {
-//         var blitz = baz - 100
+//         blitz = baz - 100
 //     }
 
 //     print("blitz value is =>" + blitz)
 
 // }
 
-// foo(200);
+// foo(200)
 
 // How to create function scope?
 // function foo(bar) {
-//     var baz = bar * 2;
+//     var baz = bar * 2
 
 //     //if (bar > 1000)
 //     (function (name){
 //         if (bar > 1) {
 //             var blitz = baz - 100
-//             print(name);
+//             print(name)
 //         }
+
 //         print("blitz value is =>" + blitz)
 
-//     })("Slim Shady")
+//     })("slim shady")
 
 // }
 
-// foo(200);
+// foo(200)
 
 // var binds variable to its scope or assigns a scope to variables
 
@@ -53,36 +59,36 @@ var print = require('./print')
 // JavaScript’s var keyword is scoped to the function enclosing it.
 
 // var introductions = [],
-//     names = ["Slim", "Shady", "Eminem"];
+//     names = ["Slim", "Shady", "Eminem"]
 
 
-// for(var i=0; i<names.length; i++){
+// for(var i=0 i<names.length i++){
 
 //     introductions[i] = function(soAndSo){
 //         return "Hello, " + soAndSo + ", my name is " + names[i]
 //     }
 // }
 
-// print(introductions[0]("John"));
-// print(introductions[1]("Abhishek"));
+// print(introductions[0]("John"))
+// print(introductions[1]("Abhishek"))
 
 //What went wrong?
 //The answer is that pesky var i. Remember that i is bound in the surrounding environment
 //JavaScript looks i up in its enclosing environment (its closure), and gets the value 3
 
 //use => node --use-strict --harmony <file_name>
-// for (let i = 0; i < 3; i++) {
-//   print('i:', i);
+// for (let i = 0 i < 3 i++) {
+//   print('i:', i)
 // }
 
-// print(i);
+// print(i)
 
 // Declares a block scope local variable, optionally initializing it to a value.
 
 // function foo() {
-//   print(name); // ReferenceError
+//   print(name) // ReferenceError
 
-//   let name = "Slim Shady";
+//   let name = "Slim Shady"
 // }
 
 // ===================================================
@@ -123,11 +129,13 @@ var print = require('./print')
 
 // var person = new Person("Slim Shady")
 
-// // print(person instanceof Person)
+// print(person instanceof Person)
 
 // Person.prototype.printName = function(){
 //     print("My name is real =>" + this.name)
 // }
+
+// print(Person.prototype)
 
 // person.printName()
 
@@ -180,7 +188,7 @@ var print = require('./print')
 // function MyKlass() {
 //     this.name = "Slim Shady"
 
-//     var foo = this.printMe
+//     var foo = this.printMe.bind(this)
 
 //     foo()
 // }
@@ -192,9 +200,9 @@ var print = require('./print')
 
 // new MyKlass
 
-// the assignment f = this.foo does not assign a bound method to f. It’s simply a property lookup on the object this;
-// it indeed has the property foo, which is a function. f now refers to that function. That’s it.
-// There is no implicit binding going on.
+// // the assignment f = this.foo does not assign a bound method to f. It’s simply a property lookup on the object this
+// // it indeed has the property foo, which is a function. f now refers to that function. That’s it.
+// // There is no implicit binding going on.
 
 // var SomeView = Backbone.View.extend({
 
@@ -208,10 +216,10 @@ var print = require('./print')
 //     }
 // })
 
-//Angular js
-//angular.bind(self, fn, args);
+// //Angular js
+// angular.bind(self, fn, args)
 
-// angular.forEach(obj, iterator, [context]);
+// angular.forEach(obj, iterator, [context])
 
 //Other cool stuff
 
@@ -221,6 +229,48 @@ var print = require('./print')
 // print(foo = (bar = baz) * 2)
 
 // print(bar)
+// print(foo)
 
 //functions vs methods
 //“functions that belong to an object” to “methods.”
+
+//5) new vs Object.create
+// function Shape() {
+//     this.x = 0
+//     this.y = 0
+//     console.log('Shape constructor called')
+// }
+
+// Shape.prototype = {
+//     move: function(x, y) {
+//         this.x += x
+//         this.y += y
+//     }
+// }
+
+// // Rectangle
+// function Rectangle() {
+//     console.log('Rectangle constructor called')
+//     this.x = 0
+//     this.y = 0
+//     // If you want to call Shape's constructor function
+//     // Shape.call(this);
+// }
+
+// Rectangle.prototype = Object.create(Shape)
+// Rectangle.prototype = new Shape()
+
+// rectangle = new Rectangle()
+
+// print(rectangle instanceof Shape)
+// print(Shape.isPrototypeOf(rectangle))
+
+
+// function Person(name) {
+//     this.name = name
+// }
+
+// // Person.prototype = Object.create(null);
+
+// var person = new Person("Slim Shady");
+// console.log(person.toString);

@@ -1,15 +1,15 @@
 # 3) Prototypes
 
-# class Person
-#     constructor: (name) ->
-#         @name = name
+class Person
+    constructor: (name) ->
+        @name = name
 
-#     printMe: ->
-#         console.log "I am real #{@name}"
+    printMe: ->
+        console.log "I am real #{@name}"
 
-# person = new Person "Slim Shady"
+person = new Person "Slim Shady"
 
-# person.printMe()
+person.printMe()
 
 # class Human
 #   constructor: (@name) ->
