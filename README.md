@@ -1,6 +1,7 @@
-js_quirks
-=========
+JS quirks
+==
+Little snippets that make JS awesome
 
-### Little snippets that make JS awesome ###
+* Uncomment snippets and try out
 
 
